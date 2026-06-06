@@ -36,6 +36,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         localStorage.removeItem("cart");
       }
     }
+    setIsMounted(true);
   }, []);
 
   useEffect(() => {
