@@ -1,4 +1,4 @@
-// import { Instagram, Twitter, Facebook } from "lucide-react";
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import {X} from "lucide-react"
 
 export default function Footer() {
@@ -23,10 +23,9 @@ export default function Footer() {
         <div className="flex flex-col gap-3">
           <h3 className="text-section-title">Follow Us</h3>
           <div className="flex gap-3">
-            {/* <Facebook size={20} className="text-content/70 hover:text-content cursor-pointer transition-colors" />
-            <Twitter size={20} className="text-content/70 hover:text-content cursor-pointer transition-colors" />
-            <Instagram size={20} className="text-content/70 hover:text-content cursor-pointer transition-colors" /> */}
-            <X size={20} className="text-content/70 hover:text-content cursor-pointer transition-colors" />
+            <FaTwitter size={20} className="text-content/70 hover:text-content cursor-pointer transition-colors" />
+            <FaFacebook size={20} className="text-content/70 hover:text-content cursor-pointer transition-colors" />
+            <FaInstagram size={20} className="text-content/70 hover:text-content cursor-pointer transition-colors" />
           </div>
         </div>
 
