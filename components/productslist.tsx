@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { PackageSearch, ShoppingCart } from "lucide-react";
 import { Star } from "lucide-react";
+import { useCart } from "@/context/cartcontext";
 
 interface Product {
   id: number;
@@ -56,6 +57,7 @@ export default function ProductsList({
   maxPrice,
   searchQuery,
 }: ProductsListProps) {
+  const { addToCart } = useCart();
   const [data, setData] = useState<DummyJSONResponse | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -163,7 +165,17 @@ export default function ProductsList({
 
               <p className="text-price">${product.price}</p>
 
-              <button className="w-full flex items-center justify-center gap-2 rounded-lg py-2 hover:bg-primary/90 cursor-pointer text-content text-label-sm bg-primary active:scale-95 transition-all duration-100">
+              <button
+                onClick={() =>
+                  addToCart({
+                    id: product.id,
+                    title: product.title,
+                    price: product.price,
+                    thumbnail: product.thumbnail,
+                  })
+                }
+                className="w-full flex items-center justify-center gap-2 rounded-lg py-2 hover:bg-primary/90 cursor-pointer text-content text-label-sm bg-primary active:scale-95 transition-all duration-100"
+              >
                 <ShoppingCart size={14} />
                 Add to Cart
               </button>
