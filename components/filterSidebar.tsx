@@ -1,5 +1,6 @@
 "use client";
 
+
 interface FilterSidebarProps {
   isOpen: boolean;
   onClose: () => void;
@@ -19,7 +20,7 @@ export default function FilterSidebar({
 }: FilterSidebarProps) {
   const categories = ["All", "Electronics", "Clothing", "Home"];
 
-  // In filterContent, change name to be unique per instance
+
   const filterContent = (isMobile: boolean) => (
     <div className="flex flex-col gap-6 p-5 bg-sidebar">
       <div className="flex flex-col gap-2">
@@ -31,7 +32,7 @@ export default function FilterSidebar({
           >
             <input
               type="radio"
-              name={isMobile ? "category-mobile" : "category-desktop"} // ← unique names
+              name={isMobile ? "category-mobile" : "category-desktop"} 
               checked={category === selectedCategory}
               onChange={() => onCategoryChange(category)}
               className="accent-blue-700"

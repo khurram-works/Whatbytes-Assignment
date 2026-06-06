@@ -1,4 +1,5 @@
 // import { Instagram, Twitter, Facebook } from "lucide-react";
+import {X} from "lucide-react"
 
 export default function Footer() {
   return (
@@ -25,6 +26,7 @@ export default function Footer() {
             {/* <Facebook size={20} className="text-content/70 hover:text-content cursor-pointer transition-colors" />
             <Twitter size={20} className="text-content/70 hover:text-content cursor-pointer transition-colors" />
             <Instagram size={20} className="text-content/70 hover:text-content cursor-pointer transition-colors" /> */}
+            <X size={20} className="text-content/70 hover:text-content cursor-pointer transition-colors" />
           </div>
         </div>
 
