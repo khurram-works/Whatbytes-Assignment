@@ -5,6 +5,7 @@ import Image from "next/image";
 import { PackageSearch, ShoppingCart } from "lucide-react";
 import { Star } from "lucide-react";
 import { useCart } from "@/context/cartcontext";
+import Link from "next/link";
 
 interface Product {
   id: number;
@@ -134,7 +135,11 @@ export default function ProductsList({
               key={product.id}
               className="w-full rounded-lg bg-content text-text-primary shadow-sm p-3 flex flex-col gap-2 hover:shadow-md transition-shadow duration-200"
             >
-              <div className="w-full h-36 flex items-center justify-center rounded-md bg-gray-50 overflow-hidden">
+              <Link
+                href={`/product/${product.id}`}
+                key={product.id}
+                className="w-full h-36 flex items-center justify-center rounded-md bg-gray-50 overflow-hidden"
+              >
                 <Image
                   src={product.thumbnail}
                   alt={product.title}
@@ -142,7 +147,7 @@ export default function ProductsList({
                   height={144}
                   className="h-36 w-full object-contain"
                 />
-              </div>
+              </Link>
 
               <h3 className="text-product-title line-clamp-2">
                 {product.title}
